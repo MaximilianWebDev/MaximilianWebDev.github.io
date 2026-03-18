@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="АвтоГаз | Продажа спорткаров и внедорожников">
+    <meta property="og:description" content="Автосалон АвтоГаз предлагает купить спортивные автомобили, внедорожники и кроссоверы. Быстрая доставка, сервисное обслуживание и автокредитование.">
+    <meta property="og:image" content="https://autogaz.ru/img/ford-mustang.png">
+    <meta property="og:url" content="https://autogaz.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="АвтоГаз">
+    <title>АвтоГаз | Продажа спорткаров и внедорожников</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+    <div class="container">
+        <a href="#" class="title">Авто<span class="gaz">Газ</span></a>
+        
+        <button class="burger-menu" id="burgerMenu" aria-label="Меню">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+
+        <nav class="nav" id="nav">
+            <ul class="list">
+                <li><a href="#">Каталог авто</a></li>
+                <li><a href="#">Кредит и рассрочка</a></li>
+                <li><a href="#">Контакты и сервис</a></li>
+                <li><a href="#">О нас</a></li>
+            </ul>
+        </nav>
+        
+        <a href="./product.html" class="btn"><span>Посетить каталог</span></a>
+    </div>
+</header>
+
+    <main>
+        <!-- СЕКЦИЯ WELCOME -->
+        <section class="welcome">
+            <div class="container">
+                <div class="welcome_text">
+                    <h1 class="welcome_title">Автосалон №1</h1>
+                    <p class="welcome_txt">Вас ждет яркий ассортимент: от внедорожников до спорткаров!</p>
+                    <div class="welcome_btn">
+                        <a href="./product.html" class="w_btn">К покупке!</a>
+                        <a href="#" class="w_btn2">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="img" aria-hidden="true"></div> <!-- Скрывается на мобильных -->
+        </section>
+
+        <!-- СЕКЦИЯ АССОРТИМЕНТ -->
+        <section class="plitka">
+            <div class="container">
+                <h2 class="plitka_title">Наш ассортимент</h2>
+                <div class="plitka_img">
+                    <!-- Карточка 1: Суперкары -->
+                    <div class="pl_img">
+                        <img src="./img/Mask-1.png" 
+                             srcset="./img/Mask-1.png 800w, 
+                                     ./img/Mask-1.png 768w, 
+                                     ./img/Mask-1.png 480w, 
+                                     ./img/Mask-1.png 320w"
+                             sizes="(max-width: 320px) 280px,
+                                    (max-width: 480px) 440px,
+                                    (max-width: 768px) 700px,
+                                    800px"
+                             alt="Суперкар Lamborghini" 
+                             width="584" 
+                             height="524" 
+                             loading="lazy">
+                        <h3 class="pl_h">Суперкары</h3>
+                        <a href="#" class="discover">
+                            Подробнее 
+                            <img src="./img/Vector-1.png" alt="→" width="20" height="20" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="pl_img">
+                        <img src="./img/Mask-2.png" 
+                             srcset="./img/Mask-2.png 800w, 
+                                     ./img/Mask-2.png 768w, 
+                                     ./img/Mask-2.png 480w, 
+                                     ./img/Mask-2.png 320w"
+                             sizes="(max-width: 320px) 280px,
+                                    (max-width: 480px) 440px,
+                                    (max-width: 768px) 700px,
+                                    800px"
+                             alt="Спорткар" 
+                             width="584" 
+                             height="524" 
+                             loading="lazy">
+                        <h3 class="pl_h">Спорткары</h3>
+                        <a href="#" class="discover">
+                            Подробнее 
+                            <img src="./img/Vector-1.png" alt="→" width="20" height="20" loading="lazy">
+                        </a>
+                    </div>
+
+                    <div class="pl_img">
+                        <img src="./img/suv.png" 
+                             srcset="./img/suv.png 800w, 
+                                     ./img/suv.png 768w, 
+                                     ./img/suv.png 480w, 
+                                     ./img/suv.png 320w"
+                             sizes="(max-width: 320px) 280px,
+                                    (max-width: 480px) 440px,
+                                    (max-width: 768px) 700px,
+                                    800px"
+                             alt="Внедорожник Mercedes-Benz G-Класс" 
+                             width="584" 
+                             height="524" 
+                             loading="lazy">
+                        <h3 class="pl_h">Внедорожники</h3>
+                        <a href="#" class="discover">
+                            Подробнее 
+                            <img src="./img/Vector-1.png" alt="→" width="20" height="20" loading="lazy">
+                        </a>
+                    </div>
+                    
+                    <div class="pl_img">
+                        <img src="./img/Mask-3.png" 
+                             srcset="./img/Mask-3.png 800w, 
+                                     ./img/Mask-3.png 768w, 
+                                     ./img/Mask-3.png 480w, 
+                                     ./img/Mask-3.png 320w"
+                             sizes="(max-width: 320px) 280px,
+                                    (max-width: 480px) 440px,
+                                    (max-width: 768px) 700px,
+                                    800px"
+                             alt="Кроссовер" 
+                             width="584" 
+                             height="524" 
+                             loading="lazy">
+                        <h3 class="pl_h">Кроссоверы</h3>
+                        <a href="#" class="discover">
+                            Подробнее 
+                            <img src="./img/Vector-1.png" alt="→" width="20" height="20" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="serv">
+            <div class="container">
+                <h2 class="serv_title">Наши услуги</h2>
+                <div class="serv_cards">
+                    <div class="s_card">
+                        <img src="./img/serv.png" 
+                             srcset="./img/serv.png 800w, 
+                                     ./img/serv.png 480w, 
+                                     ./img/serv.png 320w"
+                             sizes="(max-width: 480px) 100vw,
+                                    (max-width: 768px) 50vw,
+                                    384px"
+                             alt="Быстрая доставка" 
+                             loading="lazy"
+                             width="384" 
+                             height="220">
+                        <div class="s_card_content">
+                            <h3 class="s_h">Быстрая доставка</h3>
+                            <p class="s_txt">Доставка автомобиля в любую точку мира</p>
+                        </div>
+                    </div>
+                    <div class="s_card">
+                        <img src="./img/serv2.png" 
+                             srcset="./img/serv2.png 800w, 
+                                     ./img/serv2.png 480w, 
+                                     ./img/serv2.png 320w"
+                             sizes="(max-width: 480px) 100vw,
+                                    (max-width: 768px) 50vw,
+                                    384px"
+                             alt="Сервисное обслуживание" 
+                             loading="lazy"
+                             width="384" 
+                             height="220">
+                        <div class="s_card_content">
+                            <h3 class="s_h">Сервис</h3>
+                            <p class="s_txt">Собственный сервисный центр</p>
+                        </div>
+                    </div>
+                    <div class="s_card">
+                        <img src="./img/Кредит.png" 
+                             srcset="./img/Кредит.png 800w, 
+                                     ./img/Кредит.png 480w, 
+                                     ./img/Кредит.png 320w"
+                             sizes="(max-width: 480px) 100vw,
+                                    (max-width: 768px) 50vw,
+                                    384px"
+                             alt="Автокредитование" 
+                             loading="lazy"
+                             width="384" 
+                             height="220">
+                        <div class="s_card_content">
+                            <h3 class="s_h">Автокредит</h3>
+                            <p class="s_txt">Помощь в получении кредита</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="form-section">
+            <div class="container">
+                <h2 class="title-section">Хотите задать вопрос?</h2>
+                <form action="/action_page.php" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя:" required>
+                    <input type="email" id="email" name="email" placeholder="Email:" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон:" required>
+                    <input type="text" id="question" name="question" placeholder="Ваш вопрос:" required>
+                    <button type="submit" class="btn form_btn">Задать вопрос</button>
+                </form> 
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="logotip">
+                <h2>Авто<span class="gaz">Газ</span></h2>
+            </div>
+            <div class="soc">
+                <a href="https://vk.com" aria-label="VK" target="_blank" rel="noopener"><img src="./img/VK.png" alt="VK" width="24" height="24" loading="lazy"></a>
+                <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><img src="./img/inst.png" alt="Instagram" width="24" height="24" loading="lazy"></a>
+                <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><img src="./img/TikTok.png" alt="TikTok" width="24" height="24" loading="lazy"></a>
+            </div>
+            <div class="logotip">
+                <img src="./img/num-icon.png" alt="Телефон" width="24" height="24" loading="lazy">
+                <h2>8 800-555-3535</h2>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="#" class="legal-link">Условия пользования</a>
+            <span class="separator">|</span> 
+            <a href="#" class="legal-link">Политика конфиденциальности</a>
+        </div>
+        <p>©2026 AutoGaz. All rights reserved</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burgerMenu');
+            const nav = document.getElementById('nav');
+            const overlay = document.getElementById('overlay');
+
+            if (burgerMenu && nav && overlay) {
+                function toggleMenu() {
+                    burgerMenu.classList.toggle('open');
+                    nav.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+                }
+
+                burgerMenu.addEventListener('click', toggleMenu);
+                overlay.addEventListener('click', toggleMenu);
+
+                document.querySelectorAll('.list a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (nav.classList.contains('active')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

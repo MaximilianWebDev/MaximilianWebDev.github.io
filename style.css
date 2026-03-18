@@ -1,0 +1,885 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ========== ОСНОВНЫЕ СТИЛИ ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== ТИПОГРАФИЯ ========== */
+h1, h2, h3 {
+    color: white;
+    font-weight: 700;
+}
+
+.title {
+    font-size: clamp(28px, 6vw, 35px);
+    z-index: 1001;
+    position: relative;
+}
+
+.gaz {
+    color: #EAB308;
+    font-size: clamp(28px, 6vw, 35px);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* ========== ШАПКА С БУРГЕР-МЕНЮ ========== */
+header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Кнопка бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+}
+
+.burger-line {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* Анимация бургера при открытии */
+.burger-menu.open .burger-line:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+}
+
+.burger-menu.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .burger-line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+/* Навигация */
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.list a {
+    display: inline-block;
+    padding: 12px 15px;
+    min-height: 44px;
+    min-width: 44px;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.list a:hover {
+    color: #EE8313;
+}
+
+.btn {
+    background-color: #EE8313;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: 0.2s;
+    white-space: nowrap;
+    margin-left: 20px;
+    z-index: 1001;
+    position: relative;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* ========== СЕКЦИЯ WELCOME ========== */
+.welcome {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.welcome_text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.welcome_title {
+    font-size: clamp(36px, 8vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.welcome_txt {
+    color: white;
+    opacity: 0.8;
+    font-size: clamp(16px, 4vw, 18px);
+    max-width: 474px;
+    margin-bottom: 30px;
+}
+
+.welcome_btn {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.w_btn, .w_btn2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    min-width: 44px;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.w_btn {
+    background-color: #EE8313;
+}
+
+.w_btn2 {
+    background-color: transparent;
+    color: #EE8313;
+    border: 2px solid #EE8313;
+}
+
+/* Фоновое изображение (СКРОЕМ НА МОБИЛЬНЫХ) */
+.img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+}
+
+.img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/ford-mustang.png');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+/* ========== ПЛИТКА ========== */
+.plitka {
+    padding: 80px 0;
+}
+
+.plitka_title {
+    text-align: center;
+    font-size: clamp(32px, 7vw, 52px);
+    margin-bottom: 50px;
+}
+
+.plitka_img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.pl_img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 584/524;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.pl_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.pl_img:hover img {
+    transform: scale(1.1);
+}
+
+.pl_h {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: clamp(20px, 5vw, 32px);
+    font-weight: 500;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.discover {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: 500;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.discover img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ========== УСЛУГИ ========== */
+.serv {
+    padding: 80px 0;
+}
+
+.serv_title {
+    text-align: center;
+    font-size: clamp(32px, 7vw, 52px);
+    margin-bottom: 60px;
+}
+
+.serv_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.s_card {
+    background: #1A1A1A;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.s_card:hover {
+    background: white;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(238, 131, 19, 0.2);
+}
+
+.s_card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border: none;
+    transition: 0.5s;
+}
+
+.s_card:hover img {
+    transform: scale(1.05);
+}
+
+.s_card_content {
+    padding: 30px 25px 40px;
+    text-align: center;
+}
+
+.s_h {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.s_txt {
+    font-size: clamp(15px, 3vw, 17px);
+    opacity: 0.8;
+    color: white;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.s_card:hover .s_h,
+.s_card:hover .s_txt {
+    color: black;
+}
+
+/* ========== ФОРМА ========== */
+#form-section {
+    padding: 80px 0;
+}
+
+.title-section {
+    text-align: center;
+    font-size: clamp(28px, 6vw, 42px);
+    margin-bottom: 40px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    width: 100%;
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 16px;
+    color: white;
+    min-height: 55px;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #EE8313;
+}
+
+input::placeholder {
+    color: #999;
+    font-size: 16px;
+}
+
+.form_btn {
+    width: 100%;
+    margin-top: 10px;
+    background: #EE8313;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 55px;
+    margin-left: 0;
+}
+
+/* ========== ФУТЕР ========== */
+footer {
+    background: #070707;
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logotip {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo_foot {
+    font-size: 35px;
+    margin: 0;
+}
+
+.soc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.soc a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    background: #1A1A1A;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.soc a:hover {
+    background: #EE8313;
+    transform: scale(1.1);
+}
+
+.soc img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.legal-link {
+    color: #999;
+    font-size: 14px;
+    text-decoration: underline;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.fot p {
+    background: #EAB308;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ========== МЕДИАЗАПРОСЫ ========== */
+
+/* Планшеты */
+@media screen and (max-width: 1024px) {
+    .plitka_img {
+        gap: 20px;
+    }
+    
+    .serv_cards {
+        gap: 20px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 25px;
+    }
+
+    /* ===== БУРГЕР-МЕНЮ ===== */
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background: #0A0A0A;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 30px 30px;
+        transition: 0.4s;
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.8);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .list {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .list a {
+        width: 100%;
+        text-align: left;
+        padding: 18px 20px;
+        font-size: 20px;
+        border-bottom: 1px solid #333;
+        white-space: normal;
+    }
+
+    .list a:hover {
+        background: #EE8313;
+        color: black;
+    }
+
+    /* Затемнение фона при открытом меню */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    /* Кнопка в шапке */
+    .btn {
+        margin-left: auto;
+        margin-right: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    /* ===== СКРЫВАЕМ МАШИНУ НА МОБИЛЬНЫХ ===== */
+    .img {
+        display: none; /* Полностью скрываем изображение */
+    }
+
+    /* Центрируем текст welcome */
+    .welcome {
+        min-height: auto;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .welcome_text {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .welcome_txt {
+        margin: 0 auto 30px;
+    }
+
+    .welcome_btn {
+        justify-content: center;
+    }
+
+    /* Плитка в 1 колонку */
+    .plitka_img {
+        grid-template-columns: 1fr;
+    }
+
+    .pl_img {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* Услуги в 1 колонку */
+    .serv_cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .s_card img {
+        height: 200px;
+    }
+
+    /* Футер */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .logotip {
+        justify-content: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+/* Маленькие телефоны */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 15px;
+    }
+
+    .welcome_title {
+        font-size: 32px;
+    }
+
+    .w_btn, .w_btn2 {
+        width: 100%;
+    }
+
+    .s_card img {
+        height: 180px;
+    }
+
+    .s_card_content {
+        padding: 25px 20px 30px;
+    }
+}
+
+/* ========== ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ========== */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ========== ШАПКА С БУРГЕР-МЕНЮ ========== */
+header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+    gap: 10px;
+}
+
+/* Логотип */
+.title {
+    font-size: clamp(28px, 6vw, 35px);
+    z-index: 1001;
+    position: relative;
+    font-weight: 700;
+    white-space: nowrap; /* Запрещаем перенос текста логотипа */
+    flex-shrink: 0; /* Запрещаем сжатие логотипа */
+}
+
+/* Кнопка бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+    flex-shrink: 0; /* Запрещаем сжатие кнопки */
+}
+
+/* Кнопка в шапке */
+.btn {
+    background-color: #EE8313;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: 0.2s;
+    white-space: nowrap; /* Запрещаем перенос текста кнопки */
+    z-index: 1001;
+    position: relative;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0; /* Запрещаем сжатие кнопки */
+}
+
+/* Навигация */
+.nav {
+    flex: 1; /* Занимает оставшееся пространство */
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0; /* Разрешаем сжатие если нужно */
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: 0.3s;
+    flex-wrap: wrap; /* Разрешаем перенос пунктов меню */
+    justify-content: flex-end;
+}
+
+.list a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 15px;
+    transition: 0.2s;
+    white-space: nowrap;
+    font-size: clamp(14px, 1.5vw, 18px); /* Адаптивный размер шката */
+}
+
+/* ========== МЕДИАЗАПРОСЫ ========== */
+
+/* Планшеты (до 1024px) - начинаем адаптировать меню */
+@media screen and (max-width: 1024px) {
+    .list {
+        gap: 10px; /* Уменьшаем расстояние между пунктами */
+    }
+    
+    .list a {
+        padding: 12px 10px; /* Уменьшаем отступы */
+        font-size: 15px; /* Уменьшаем шрифт */
+    }
+}
+
+/* Мобильные устройства (до 880px) - переключаемся на бургер */
+@media screen and (max-width: 880px) {
+    .burger-menu {
+        display: flex; /* Показываем бургер */
+    }
+
+    /* Прячем навигацию, она будет в бургере */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background: #0A0A0A;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 30px 30px;
+        transition: 0.4s;
+        z-index: 1000;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.8);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .list {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .list a {
+        width: 100%;
+        text-align: left;
+        padding: 18px 20px;
+        font-size: 20px;
+        border-bottom: 1px solid #333;
+        white-space: normal;
+    }
+
+    /* Кнопка в шапке теперь слева от бургера */
+    .btn {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
+
+/* Маленькие телефоны (до 600px) - убираем логотип */
+@media screen and (max-width: 600px) {
+    .title {
+        display: none; /* Прячем логотип */
+    }
+    
+    /* Центрируем оставшиеся элементы */
+    header .container {
+        justify-content: flex-end; /* Прижимаем кнопки к правому краю */
+    }
+    
+    .btn {
+        margin-right: 5px;
+    }
+}
+
+/* Очень маленькие телефоны (до 400px) */
+@media screen and (max-width: 400px) {
+    .btn span {
+        display: none; /* Прячем текст "Посетить" */
+    }
+    
+    .btn::before {
+        content: "→"; /* Показываем стрелку */
+        font-size: 20px;
+    }
+    
+    .btn {
+        padding: 12px 15px; /* Делаем кнопку компактнее */
+        min-width: 44px;
+    }
+}
+
+/* Экстремально маленькие (до 320px) */
+@media screen and (max-width: 320px) {
+    .btn {
+        padding: 12px 10px;
+    }
+    
+    .burger-menu {
+        width: 35px; /* Чуть уменьшаем бургер */
+        height: 25px;
+    }
+}

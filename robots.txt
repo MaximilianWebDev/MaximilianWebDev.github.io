@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /action_page.php
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /private/
+
+
+Sitemap: https://autogaz.ru/sitemap.xml
+
+Host: https://autogaz.ru
